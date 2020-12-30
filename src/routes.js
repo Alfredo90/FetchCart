@@ -9,8 +9,8 @@ import Checkout from './components/Checkout/Checkout'
 export default (
     <Switch>
         <Route exact path='/' component={Navbar}></Route>
-        <Route path='/petfoods' component={PetFoods}></Route>
-        <Route path='/pettoys' component={PetToys}></Route>
+        <Route path='/petfoods/:animal' component={PetFoods}></Route>
+        <Route path='/pettoys/:animal' component={PetToys}></Route>
         <Route path='/cart' component={Cart}></Route>
         <Route path='/checkout' component={Checkout}></Route>
 

@@ -10,7 +10,46 @@
     align-items: center;
   }
   
-  .nav-item {
+  .dropmenu a{
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   text-decoration: none;
+   list-style: none;
+   color:white;
+   padding-left: 10px;
+   font-size: 18px;
+  
+  }
+
+ 
+  
+  .dropdown{
+    /* display: none; */
+    position: absolute;
+    right: 31.5%;
+    background-color:#007DB4;
+    width: 20%; 
+    height: 25vh;
+  }
+ 
+  
+      
+    
+    
+ 
+   
+   
+ 
+   
+
+  
+
+
+
+
+
+ .nav-item {
     list-style: none;
     margin-right:50px;
     color: white;
@@ -27,6 +66,7 @@
    
     margin-left:30px;
   }
+
   
   .logo {
     font-size: x-large;  
@@ -34,6 +74,8 @@
   }
   .hambtn {
     display:none ;
+    height: 60px;
+   
     font-family:  sans-serif;
     font-size: 1rem;
     color: white;
@@ -49,6 +91,20 @@
     background: #619fb9;
   }
 
+  .image-links {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+ 
+  }
+
+  .pets {
+    width: 63%;
+    height: 65vh;
+    padding-top: 30px;
+    
+  }
 
 
  

@@ -1,7 +1,8 @@
 require('dotenv').config()
 const express = require('express')
 const massive = require('massive')
-const productCtrl = require('./controller/productController')
+// const productCtrl = require('./controller/productController')
+const cartCtrl = require('./controller/cartController')
 
 const { SERVER_PORT, CONNECTION_STRING } = process.env
 const app = express()
@@ -23,12 +24,12 @@ massive({
 //FOODS ENDPOINTS
 app.get('/petfoods/:animal' )
 // TOYS ENDPOINTS
-app.get('/pettoys')
-//CART ENDPOINTS
-app.get('/cart', productCtrl.getProducts)
-app.post('/cart', productCtrl.addProductsToCart)
-app.put('/cart', productCtrl.updateProductsInCart)
-app.delete('/cart', productCtrl.deleteProductsFromCart)
+app.get('/pettoys/:animal')
+//Cart ENDPOINTS
+app.get('/cart', cartCtrl.getProductsFromCart)
+app.post('/cart/:product_id', cartCtrl.addProductsToCart)
+app.put('/cart', cartCtrl.updateProductsInCart)
+app.delete('/cart/:id', cartCtrl.deleteProductsFromCart)
 //CHECKOUT ENPOINTS
 app.put('/checkout')
 
