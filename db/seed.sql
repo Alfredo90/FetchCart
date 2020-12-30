@@ -2,7 +2,7 @@ CREATE TABLE product (
     id SERIAL PRIMARY KEY,
     img VARCHAR (1000),
     descript VARCHAR (500),
-    price INT.
+    price INT,
     pet_type TEXT
 )
 
@@ -17,10 +17,10 @@ CREATE TABLE cart (
    
 )
 
-CREATE TABLE product_cart(
-    product_cart_id SERIAL PRIMARY KEY,
-    cart_id INT REFERENCES cart(id)
-)
+-- CREATE TABLE product_cart(
+--     product_cart_id SERIAL PRIMARY KEY,
+--     cart_id INT REFERENCES cart(id)
+-- )
 
 
 
@@ -34,10 +34,6 @@ CREATE TABLE invoice (
 
 
 
-
--- ALTER TABLE product
--- ALTER COLUMN price TYPE VARCHAR;
--- DROP TABLE product
 
 
 
