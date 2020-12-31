@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./reset.css";
 import "./Navbar.css";
 
@@ -7,42 +7,35 @@ export class Navbar extends Component {
   render() {
     return (
       <nav>
-        <div className="navbar">
-          <h1 className="logo">Fetch Cart</h1>
+      <div className="navbar">
+        <h1 className="logo">Fetch Cart</h1>
+        <div className="dropdown">
+          <span className="dropbtn">Pet Food</span>
 
           <ul className="nav-links">
-            <li className="nav-item">
-              <a href="#"> Pet Food</a>
+            <li className="nav-items">
+              <Link to='/petfoods/dog'>Dog </Link>
             </li>
-            <li className="nav-item">
-              <a href="#"> Pet Toy</a>
-            </li>
-          </ul>
-          <button className="hambtn">Menu</button>
-        </div>
-
-        <div className="subnav">
-          <ul>
-            <li className="sub-item">
-              <a href="#">Dog</a>
-            </li>
-            <li className="sub-item">
-              <a href="#">Cat</a>
+            <li className="nav-items">
+            <Link to='/petfoods/cat'>Cat </Link>
             </li>
           </ul>
         </div>
+        <div className="dropdown2">
+          <span className="dropbtn2">Pet Toy</span>
 
-        <div className="subnav2">
-          <ul>
-            <li className="sub-item2">
-              <a href="#">Dog</a>
+          <ul className="nav-links2">
+            <li className="nav-items2">
+            <Link to='/pettoys/dog'>Dog </Link>
             </li>
-            <li className="sub-item2">
-              <a href="#">Cat</a>
+
+            <li className="nav-items2">
+            <Link to='/pettoys/cat'>Cat </Link>
             </li>
           </ul>
         </div>
-
+      </div>
+      
         <div className="image-links">
           <img
             className="pets"
@@ -65,9 +58,11 @@ export class Navbar extends Component {
             src="https://images.unsplash.com/photo-1585710679266-8a8774703978?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
           />
         </div>
-      </nav>
-    );
-  }
+     
+    </nav>
+  );
 }
+}
+
 
 export default Navbar;
