@@ -1,110 +1,113 @@
+.navbar {
+  background-color: #007db4;
+  height: 60px;
+  width: 100%;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.nav-item {
+  display: inline-flex;
+  list-style: none;
+  margin-right: 220px;
+}
 
-.nav-links {
-    background-color:#007DB4;
-    height: 60px;
-    width: 100%;
-    font-family: sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .dropmenu a{
-   display: flex;
-   justify-content: flex-start;
-   align-items: center;
-   text-decoration: none;
-   list-style: none;
-   color:white;
-   padding-left: 10px;
-   font-size: 18px;
-  
-  }
+.nav-item a {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  transition: all 200ms ease-in;
+}
 
- 
-  
-  .dropdown{
-    /* display: none; */
-    position: absolute;
-    right: 31.5%;
-    background-color:#007DB4;
-    width: 20%; 
-    height: 25vh;
-  }
- 
-  
-      
-    
-    
- 
+.logo {
+  font-size: xx-large;
+  color: white;
+  padding: 30px;
+}
+
+.hambtn {
+  display: none;
+  height: 60px;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: white;
+  background: #007db4;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+.hambtn:hover {
+  background: #619fb9;
+}
+
+/* /////////////DROP DOWN MENU */
+.subnav {
+  background-color: #007db4;
+  height: 20vh;
+  width: 13%;
+  font-family: sans-serif;
+  /* display: none; */
+  position: absolute;
+  right: 20%;
+  opacity: 0.7;
+}
+
+.sub-item {
+  display: flex;
+  letter-spacing: 2px;
+}
+
+.sub-item a {
+  text-decoration: none;
+  color: white;
+  transition: all 200ms ease-in;
+  padding: 10px;
+}
+
+/* SUBNAV2 */
+
+.subnav2 {
+  background-color: #007db4;
+  height: 20vh;
+  width: 13%;
+  font-family: sans-serif;
+  /* display: none; */
+  position: absolute;
+  right: 4%;
+  opacity: 0.7;
+}
+
+.sub-item2 {
+  display: flex;
+  letter-spacing: 2px;
+}
+
+.sub-item2 a {
+  text-decoration: none;
+  color: white;
+  transition: all 200ms ease-in;
+  padding: 10px;
+}
+
+.image-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+ }
+
+ .pets {
+   width: 63%;
+   height: 65vh;
+   padding-top: 30px;
    
-   
- 
-   
-
-  
-
-
-
-
-
- .nav-item {
-    list-style: none;
-    margin-right:50px;
-    color: white;
-  }
-  
-  .nav-item a {
-    text-decoration: none;
-    color: white;
-    transition: all 200ms ease-in;
-  }
-  
-  
-  .nav-item:first-child {
-   
-    margin-left:30px;
-  }
-
-  
-  .logo {
-    font-size: x-large;  
-   
-  }
-  .hambtn {
-    display:none ;
-    height: 60px;
-   
-    font-family:  sans-serif;
-    font-size: 1rem;
-    color: white;
-    background: #007DB4;
-    border: none;
-    outline: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: all 200ms ease-in;
-  }
-  
-  .hambtn:hover {
-    background: #619fb9;
-  }
-
-  .image-links {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   align-items: center;
- 
-  }
-
-  .pets {
-    width: 63%;
-    height: 65vh;
-    padding-top: 30px;
-    
-  }
+ }
 
 
  
