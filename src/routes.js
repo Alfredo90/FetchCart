@@ -1,7 +1,7 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
-import PetFoods from './components/PetFoods/PetFoods'
-import PetToys from './components/PetToys/PetToys'
+import Products from './components/Products/Products'
+
 import Navbar from './components/Navbar/Navbar'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
@@ -9,8 +9,8 @@ import Checkout from './components/Checkout/Checkout'
 export default (
     <Switch>
         <Route exact path='/' component={Navbar}></Route>
-        <Route path='/petfoods/:animal' component={PetFoods}></Route>
-        <Route path='/pettoys/:animal' component={PetToys}></Route>
+        <Route path='/products/:type/:animal' component={Products}></Route>
+        
         <Route path='/cart' component={Cart}></Route>
         <Route path='/checkout' component={Checkout}></Route>
 

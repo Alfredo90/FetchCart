@@ -14,10 +14,10 @@ export class Navbar extends Component {
 
           <ul className="nav-links">
             <li className="nav-items">
-              <Link to='/petfoods/dog'>Dog </Link>
+              <Link to='/products/food/dog'>Dog </Link>
             </li>
             <li className="nav-items">
-            <Link to='/petfoods/cat'>Cat </Link>
+            <Link to='/products/food/cat'>Cat </Link>
             </li>
           </ul>
         </div>
@@ -26,11 +26,11 @@ export class Navbar extends Component {
 
           <ul className="nav-links2">
             <li className="nav-items2">
-            <Link to='/pettoys/dog'>Dog </Link>
+            <Link to='/products/toy/dog'>Dog </Link>
             </li>
 
             <li className="nav-items2">
-            <Link to='/pettoys/cat'>Cat </Link>
+            <Link to='/products/toy/cat'>Cat </Link>
             </li>
           </ul>
         </div>
