@@ -26,7 +26,7 @@ app.get('/products/:type/:animal',productCtrl.displayProducts)
 // TOYS ENDPOINTS
 // app.get('/pettoys/:animal')
 //Cart ENDPOINTS
-app.get('/cart', cartCtrl.getProductsFromCart)
+app.get('/cart', cartCtrl.getProductsToCart)
 app.post('/cart/:product_id', cartCtrl.addProductsToCart)
 app.put('/cart', cartCtrl.updateProductsInCart)
 app.delete('/cart/:id', cartCtrl.deleteProductsFromCart)

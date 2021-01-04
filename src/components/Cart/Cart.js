@@ -1,26 +1,27 @@
-// import axios from 'axios'
+import axios from 'axios'
 import React, { Component } from 'react'
 
 export class Cart extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-           products: [],
+          
            cart: []
         }
     }
 
-    // componentDidMount(){
-    //     axios.get('/cart').then((res) => {
-    //         this.setState({
-    //             products:res.data
-    //         })
-    //     })
-    // }
+    async componentDidMount(){
+        await axios.get('/cart').then((res) => {
+            this.setState({
+                cart:res.data
+            })
+        })
+    }
     render() {
+        console.log(this.state)
         return (
             <div>
-             
+             <h1>CART</h1>
             </div>
         )
     }

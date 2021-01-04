@@ -1,5 +1,5 @@
 module.exports = {
-    getProductsFromCart: async (req, res) => {
+    getProductsToCart: async (req, res) => {
         const db = req.app.get('db')
         const products = await db.get_cart() 
         res.status(200).send(products)
