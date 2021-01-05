@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 import './Products.css'
 import './reset.css'
 
@@ -8,7 +9,7 @@ export class Products extends Component {
     constructor(props) {
         super(props)
         this.state = {
-           products: [],
+           products: []
           
         }
     }
@@ -22,7 +23,7 @@ export class Products extends Component {
         })
     }
 
-    addCart = (id) => {
+    addToCart = (id) => {
     axios.post(`/cart/${id}`).then((res) => {
             this.setState({
                 cart:res.data
@@ -43,7 +44,7 @@ export class Products extends Component {
                     <br/>
                     <span className='price'>${products.price}.99</span>
                     <br/>
-                    <button className='addbtn'onClick={()=>this.addCart(products.id)}>Add To Cart</button>
+                    <button className='addbtn'onClick={()=>this.addToCart(products.id)}>Add To Cart</button>
 
                  
                    
@@ -56,6 +57,7 @@ export class Products extends Component {
         return (
             <div>
                {mappedProducts} 
+               <button><Link to='/cart'>Go To Cart</Link></button>
             </div>
         )
     }
