@@ -11,6 +11,7 @@ export class Cart extends Component {
     }
 
     async componentDidMount(){
+    
         await axios.get('/cart').then((res) => {
             this.setState({
                 cart:res.data
@@ -19,12 +20,29 @@ export class Cart extends Component {
     }
     render() {
         console.log(this.state)
+        const mappedCart = this.state.cart.map ((cart,index) => {
+            return(
+                <div className='container' key={index}>
+               <span>{cart}</span>    
+               <input></input>
+                   
+                  
+
+                 
+                   
+                </div>
+            )   
+        })
+
+        
         return (
             <div>
-             <h1>CART</h1>
+               {mappedCart} 
+               cart
             </div>
         )
     }
 }
+
 
 export default Cart

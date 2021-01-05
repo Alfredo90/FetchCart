@@ -22,6 +22,15 @@ export class Products extends Component {
         })
     }
 
+    addCart = (id) => {
+    axios.post(`/cart/${id}`).then((res) => {
+            this.setState({
+                cart:res.data
+            })
+        })
+    }
+    
+
   
     render() {
         console.log(this.state)
@@ -34,7 +43,7 @@ export class Products extends Component {
                     <br/>
                     <span className='price'>${products.price}.99</span>
                     <br/>
-                    <button className='addbtn'>Add To Cart</button>
+                    <button className='addbtn'onClick={()=>this.addCart(products.id)}>Add To Cart</button>
 
                  
                    
