@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import './Cart.css'
+import './reset.css'
 
 export class Cart extends Component {
     constructor(props) {
@@ -8,19 +10,22 @@ export class Cart extends Component {
         this.state = {
           
            cart: []
+         
            
         }
        
     }
     
   
-    updateToCart = () => {
-        axios.put(`/cart`).then((res) => {
+    updateToCart = (e,id) => {
+        let quantity = e.target.value
+        axios.put(`/cart/${id}`,{quantity}).then((res) => {
                 this.setState({
                     cart:res.data
                 })
             })
         }
+        
 
 
     addToCart = (id) => {
@@ -32,7 +37,7 @@ export class Cart extends Component {
         }
 
 
-   deleteItemFromCart = (id) => {
+    deleteItemFromCart = (id) => {
         axios.delete(`/cart/${id}`).then((res) => {
                 this.setState({
                     cart:res.data
@@ -43,13 +48,13 @@ export class Cart extends Component {
     
 
     async componentDidMount(){
-    
         await axios.get('/cart').then((res) => {
             this.setState({
                 cart:res.data
             })
         })
     }
+    
 
 
     render() {
@@ -57,15 +62,17 @@ export class Cart extends Component {
         const mappedCart = this.state.cart.map ((products,index) => {
             return(
                 <div className='container' key={index}>
-                    
+                    {console.log (products)}
                     <img className='images' src={products.img}/>
                     <span className='description'>{products.descript}</span>
                     <br/>
                     <span className='price'>${products.price}.99</span>
+                    <br/>
                     <button className='deletebtn' onClick={()=>this.deleteItemFromCart(products.id)}>Delete</button>
-                    <label>
+                     <br/>
+                    <label className='qty'>
                         Qty:
-                    <select >
+                    <select value={products.quantity} onChange={(e)=>this.updateToCart(e,products.product_id)}>
                         <option value='1'>1</option>
                         <option value='2'>2</option>
                         <option value='3'>3</option>
@@ -73,7 +80,11 @@ export class Cart extends Component {
                         <option value='5'>5</option>
                     </select>
                     </label>
-                    <button onClick={()=>this.updateToCart()}>Submit</button>
+                    {/* <button className='submitbtn' onClick={()=>this.updateToCart()}>Submit</button> */}
+                   
+                </div>
+            )   
+        })
 
                         
 
@@ -85,18 +96,15 @@ export class Cart extends Component {
                   
 
                  
-                   
-                </div>
-            )   
-        })
 
         
         return (
             <div>
+                
                {mappedCart}
-              
-               <button><Link to='/checkout'>Go To CheckOut</Link></button>
+               <button className='checkout'><Link to='/checkout'>Checkout</Link></button>
             </div>
+           
         )
     }
 }

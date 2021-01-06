@@ -28,7 +28,7 @@ app.get('/products/:type/:animal',productCtrl.displayProducts)
 //Cart ENDPOINTS
 app.get('/cart', cartCtrl.getProductsToCart)
 app.post('/cart/:product_id', cartCtrl.addProductsToCart)
-app.put('/cart', cartCtrl.updateProductsInCart)
+app.put('/cart/:product_id', cartCtrl.updateProductsInCart)
 app.delete('/cart/:id', cartCtrl.deleteProductsFromCart)
 //CHECKOUT ENPOINTS
 app.put('/checkout')

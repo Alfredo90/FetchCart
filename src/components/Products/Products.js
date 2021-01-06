@@ -38,16 +38,17 @@ export class Products extends Component {
         const mappedProducts = this.state.products.map ((products) => {
             return(
                 <div className='container' key={products.id}>
+                <div >
                    
                     <img className='images' src={products.img}/>
                     <span className='description'>{products.descript}</span>
-                    <br/>
+                    {/* <br/> */}
                     <span className='price'>${products.price}.99</span>
-                    <br/>
+                    {/* <br/> */}
                     <button className='addbtn'onClick={()=>this.addToCart(products.id)}>Add To Cart</button>
 
                  
-                   
+                </div>   
                 </div>
             )   
         })
@@ -57,7 +58,7 @@ export class Products extends Component {
         return (
             <div>
                {mappedProducts} 
-               <button><Link to='/cart'>Go To Cart</Link></button>
+               <button className='cart'><Link to='/cart'>Go To Cart</Link></button>
             </div>
         )
     }

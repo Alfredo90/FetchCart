@@ -13,11 +13,14 @@ module.exports = {
     
     updateProductsInCart: async (req, res) => {
         const db = req.app.get('db')
-        const { product_id, quantity } = req.body
-        const cart = await db.update_cart(product_id, quantity)
+        const {quantity } = req.body
+        const {product_id} = req.params
+        const cart = await db.update_cart(product_id, +quantity)
         res.status(200).send(cart)    
     },
+        
     
+        
     deleteProductsFromCart: async (req, res) => {
     const db = req.app.get('db')
     const {id} =req.params 
