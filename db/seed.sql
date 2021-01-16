@@ -12,7 +12,8 @@ CREATE TABLE product (
 CREATE TABLE cart (
     id SERIAL PRIMARY KEY,
     product_id INT REFERENCES product(id),
-    quantity INT
+    quantity INT NOT NULL
+    
    
    
 )
@@ -20,15 +21,12 @@ CREATE TABLE cart (
 
 
 
--- CREATE TABLE invoice (
---     id SERIAL PRIMARY KEY,
---     cart_id REFERENCES cart(id)
--- )
+CREATE TABLE invoice (
+    id SERIAL PRIMARY KEY,
+    cart_id REFERENCES cart(id)
+)
 
--- CREATE TABLE product_cart(
---     product_cart_id SERIAL PRIMARY KEY,
---     cart_id INT REFERENCES cart(id)
--- )
+
 
 
 

@@ -9,21 +9,25 @@ export class Cart extends Component {
         super(props)
         this.state = {
           
-           cart: []
+           cart: [],
+           total:0
          
            
         }
        
     }
-    
+
+
+  
+            
   
     updateToCart = (e,id) => {
         let quantity = e.target.value
         axios.put(`/cart/${id}`,{quantity}).then((res) => {
-                this.setState({
-                    cart:res.data
-                })
-            })
+            this.setState({
+                cart: res.data.cart, total: res.data.total})
+        })
+         
         }
         
 
@@ -50,23 +54,27 @@ export class Cart extends Component {
     async componentDidMount(){
         await axios.get('/cart').then((res) => {
             this.setState({
-                cart:res.data
-            })
+                cart: res.data.cart, total: res.data.total})
         })
     }
     
 
-
     render() {
-        console.log(this.state)
+      
+    
+        console.log(this.state.cart)
+        console.log(this.state.total)
         const mappedCart = this.state.cart.map ((products,index) => {
+        const total = products.price * products.quantity
+            
+            console.log(total)
             return(
                 <div className='container' key={index}>
                     {console.log (products)}
                     <img className='images' src={products.img}/>
                     <span className='description'>{products.descript}</span>
                     <br/>
-                    <span className='price'>${products.price}.99</span>
+                    <span className='price'>${products.price}.</span>
                     <br/>
                     <button className='deletebtn' onClick={()=>this.deleteItemFromCart(products.id)}>Delete</button>
                      <br/>
@@ -80,23 +88,14 @@ export class Cart extends Component {
                         <option value='5'>5</option>
                     </select>
                     </label>
-                    {/* <button className='submitbtn' onClick={()=>this.updateToCart()}>Submit</button> */}
+                    <div>Total:${total}</div>
+                 
+                   
                    
                 </div>
             )   
         })
-
-                        
-
-
-
-
-             
-                   
-                  
-
-                 
-
+        
         
         return (
             <div>
@@ -111,3 +110,15 @@ export class Cart extends Component {
 
 
 export default Cart
+ 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

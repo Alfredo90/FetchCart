@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const massive = require('massive')
+// const checkoutCtrl = require('./controller/checkoutController')
 const productCtrl = require('./controller/productController')
 const cartCtrl = require('./controller/cartController')
 
@@ -31,7 +32,7 @@ app.post('/cart/:product_id', cartCtrl.addProductsToCart)
 app.put('/cart/:product_id', cartCtrl.updateProductsInCart)
 app.delete('/cart/:id', cartCtrl.deleteProductsFromCart)
 //CHECKOUT ENPOINTS
-app.put('/checkout')
+// app.put('/checkout', checkoutCtrl.checkoutCart)
 
 
 app.listen(SERVER_PORT, () => console.log(`Listening to port ${SERVER_PORT}`))

@@ -1,5 +1,6 @@
-INSERT INTO cart (product_id)
-VALUES($1);
+INSERT INTO cart (product_id,quantity)
+VALUES($1, $2);
+
 -- SELECT * FROM cart;
 
 SELECT * FROM product p
