@@ -10,8 +10,8 @@ export class Cart extends Component {
         this.state = {
           
            cart: [],
-           total:0
-         
+           total:0,
+           loading: true
            
         }
        
@@ -54,7 +54,7 @@ export class Cart extends Component {
     async componentDidMount(){
         await axios.get('/cart').then((res) => {
             this.setState({
-                cart: res.data.cart, total: res.data.total})
+                cart: res.data.cart, total: res.data.total, loading: false})
         })
     }
     
@@ -89,7 +89,7 @@ export class Cart extends Component {
                     </select>
                     </label>
                     <div>Total:${total}</div>
-                 
+                    {/* <button className='checkout'><Link to='/checkout'>Checkout</Link></button> */}
                    
                    
                 </div>
@@ -101,7 +101,9 @@ export class Cart extends Component {
             <div>
                 
                {mappedCart}
-               <button className='checkout'><Link to='/checkout'>Checkout</Link></button>
+                {!this.state.loading ? <button className='checkout'><Link to='/checkout'>Checkout</Link></button>: null}
+               
+             
             </div>
            
         )

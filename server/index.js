@@ -22,10 +22,9 @@ massive({
     console.log("Hello World")
 }).catch (err => console.log(err))
 
-//FOODS ENDPOINTS
+//Product Endpoints
 app.get('/products/:type/:animal',productCtrl.displayProducts)
-// TOYS ENDPOINTS
-// app.get('/pettoys/:animal')
+
 //Cart ENDPOINTS
 app.get('/cart', cartCtrl.getProductsToCart)
 app.post('/cart/:product_id', cartCtrl.addProductsToCart)

@@ -5,6 +5,8 @@
   "main": "server/index.js",
   "proxy": "http://localhost:4000",
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.2.0",
+    "@stripe/stripe-js": "^1.11.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
