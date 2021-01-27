@@ -55,7 +55,7 @@ const Billing = () => {
                     State
                     <input type="text" list="us-state" name="usState" value={state.usState} required autoComplete="shipping region" onChange={changeHandler}/>
                     <datalist id="us-state">
-                        {usStates.map(usState => <option value={usState}/>)}
+                        {usStates.map(usState => <option key={usState}value={usState}/>)}
                     </datalist>
                 </label>
                 <label>

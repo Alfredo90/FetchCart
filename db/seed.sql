@@ -2,7 +2,7 @@ CREATE TABLE product (
     id SERIAL PRIMARY KEY,
     img VARCHAR (1000),
     descript VARCHAR (500),
-    price INT,
+    price Float(2),
     animal TEXT,
     type TEXT
 )
@@ -21,10 +21,6 @@ CREATE TABLE cart (
 
 
 
-CREATE TABLE invoice (
-    id SERIAL PRIMARY KEY,
-    cart_id REFERENCES cart(id)
-)
 
 
 

@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const massive = require('massive')
-// const checkoutCtrl = require('./controller/checkoutController')
+
 const productCtrl = require('./controller/productController')
 const cartCtrl = require('./controller/cartController')
 

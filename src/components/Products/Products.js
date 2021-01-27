@@ -6,49 +6,52 @@ import './reset.css'
 
 
 export class Products extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-           products: []
-          
-        }
-    }
+   state = {products:[]}
 
     async componentDidMount(){
         const{type,animal} = this.props.match.params
         await axios.get(`/products/${type}/${animal}`).then((res) => {
-            this.setState({
-              products:res.data
-            })
-        })
-    }
+                this.setState({
+                      products:res.data
+                    })
+                })
+            }
 
-    addToCart = (id) => {
-    axios.post(`/cart/${id}`).then((res) => {
-            this.setState({
-                cart:res.data
-            })
-        })
-    }
-    
-
-  
-    render() {
-        console.log(this.state)
+    async componentDidUpdate(prevProps) {
+        const{type,animal} = this.props.match.params
+        if (this.props.match.params !== prevProps.match.params) {
+          await axios.get(`/products/${type}/${animal}`)
+            .then(res => this.setState({products: res.data}))
+        }
+      }
+            
+            addToCart = (id) => {
+                axios.post(`/cart/${id}`).then((res) => {
+                    this.setState({
+                        cart:res.data
+                    })
+                })
+            }
+            
+            
+            
+            render() {
+        console.log(this.props)
+      
         const mappedProducts = this.state.products.map ((products) => {
             return(
-                <div className='container' key={products.id}>
-                <div >
+                <div className='product-container' key={products.id}>
+               
                    
-                    <img className='images' src={products.img}/>
-                    <span className='description'>{products.descript}</span>
+                    <img className='product-images' src={products.img}/>
+                    <div className='product-description'>{products.descript}</div>
                     {/* <br/> */}
-                    <span className='price'>${products.price}.99</span>
+                    <div className='product-price'>${products.price}</div>
                     {/* <br/> */}
-                    <button className='addbtn'onClick={()=>this.addToCart(products.id)}>Add To Cart</button>
+                    <button className='product-addbtn'onClick={()=>this.addToCart(products.id)}>Add To Cart</button>
 
                  
-                </div>   
+                
                 </div>
             )   
         })
@@ -56,9 +59,12 @@ export class Products extends Component {
        
       
         return (
-            <div>
+            <div className="products-container">
+                <div className="map">
                {mappedProducts} 
-               <button className='cart'><Link to='/cart'>Go To Cart</Link></button>
+                </div>
+                    
+               <button className='product-cart'><Link to='/cart'>Go To Cart</Link></button>
             </div>
         )
     }

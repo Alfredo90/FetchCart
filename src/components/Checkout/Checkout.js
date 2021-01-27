@@ -4,6 +4,7 @@ import CreditCard from "./CreditCard"
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import dotenv from 'dotenv'
+import OrderSummary from './OrderSummary';
 dotenv.config()
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
@@ -20,7 +21,7 @@ export class Checkout extends Component {
         return (
             <div>
                <Billing/>
-
+                <OrderSummary total={this.props.total}/>
                <Elements stripe={stripePromise}>
                <CreditCard/>
                 </Elements>

@@ -54,7 +54,8 @@ export class Cart extends Component {
     async componentDidMount(){
         await axios.get('/cart').then((res) => {
             this.setState({
-                cart: res.data.cart, total: res.data.total, loading: false})
+                cart: res.data.cart,  loading: false})
+            this.props.setTotal(res.data.total)
         })
     }
     
@@ -64,17 +65,18 @@ export class Cart extends Component {
     
         console.log(this.state.cart)
         console.log(this.state.total)
+   
         const mappedCart = this.state.cart.map ((products,index) => {
         const total = products.price * products.quantity
-            
-            console.log(total)
+      
+           
             return(
                 <div className='container' key={index}>
                     {console.log (products)}
                     <img className='images' src={products.img}/>
                     <span className='description'>{products.descript}</span>
                     <br/>
-                    <span className='price'>${products.price}.</span>
+                    <span className='price'>${products.price}</span>
                     <br/>
                     <button className='deletebtn' onClick={()=>this.deleteItemFromCart(products.id)}>Delete</button>
                      <br/>
@@ -89,7 +91,7 @@ export class Cart extends Component {
                     </select>
                     </label>
                     <div>Total:${total}</div>
-                    {/* <button className='checkout'><Link to='/checkout'>Checkout</Link></button> */}
+                 
                    
                    
                 </div>
@@ -101,7 +103,7 @@ export class Cart extends Component {
             <div>
                 
                {mappedCart}
-                {!this.state.loading ? <button className='checkout'><Link to='/checkout'>Checkout</Link></button>: null}
+                {!this.state.loading ? <button className='checkout' ><Link to='/checkout'>Checkout</Link></button>: null}
                
              
             </div>
