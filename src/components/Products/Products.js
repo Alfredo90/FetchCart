@@ -65,6 +65,7 @@ export class Products extends Component {
                 </div>
                     
                <button className='product-cart'><Link to='/cart'>Go To Cart</Link></button>
+               
             </div>
         )
     }
