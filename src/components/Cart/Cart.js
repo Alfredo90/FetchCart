@@ -73,7 +73,10 @@ export class Cart extends Component {
             return(
                 <div className='container' key={index}>
                     {console.log (products)}
-                    <img className='images' src={products.img}/>
+                    <div className="img-container">
+                    <img className='images' alt='img' src={products.img}/>
+
+                    </div>
                     <span className='description'>{products.descript}</span>
                     <br/>
                     <span className='price'>${products.price}</span>

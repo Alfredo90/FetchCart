@@ -1,51 +1,59 @@
-.products-container{
+.bg{
   display: flex;
-  flex-direction: column;
-  width: 90%;
-  margin: 0 auto;
+  flex: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #BBDEE1;
 }
 
 
 
+.product-images { 
+  height: 20vh;
+  object-fit: contain;
+
+}
+
 .product-container{
-    width: 30%;
-    height: 100%;
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  height: 30vh;
+  width: 20%;
+  margin:20px;
+  box-shadow:  5px 5px 20px #e2dfdf,
+             -5px -5px 20px #e2dfdf;
 
-  .map{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto;
-  }
-  
+}
+
    
   
-    
-   
 
-  .product-description {
+
+
+
+
+
+  
+
+
+
+
+  /* .product-description {
     width: 75%;
-    margin: 0 auto;
     text-align:center;
+    font-size: 18px;
+  }
   
    
-    font-size: 18px;
     
-  }
   .product-price {
-    margin: 0 auto;
-  
     font-size: 17px;
-    
   }
+    
+  
   
   .product-addbtn {
     display: flex;
@@ -61,53 +69,13 @@
     margin: 0 auto;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     
-  }
-
-
-  .product-cart {
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    background-color: green;
-    height: 25px;
-    width: 100px;
-    font-size: 14px;
-    border-radius: 10px;
-    outline: none;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    margin-left: 20px;
-  }
-  .product-cart a{
-    display: flex;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-  }
-
+  } 
 
 
  
    
-   
+    */
 
-.product-images {
-
- height: 20vh;
-  margin: 30px auto;
-  border-radius: 5px;
-
- 
-
-  /*     
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-      0 100px 80px rgba(0, 0, 0, 0.12); */
-  }
-
-    
-
-  
 
 
   
